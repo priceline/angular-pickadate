@@ -88,6 +88,7 @@
           defaultDate: '=',
           minDate: '=',
           maxDate: '=',
+          startDate: '=',
           disabledDates: '=',
           weekStartsOn: '='
         },
@@ -161,6 +162,10 @@
                 className = 'pickadate-enabled';
               }
 
+              if (scope.startDate && date >= scope.startDate) {
+                className = className + ' pickadate-los';
+              }
+              
               if (date === today) {
                 className += ' pickadate-today';
               }
